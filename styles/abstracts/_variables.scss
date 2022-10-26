@@ -1,0 +1,72 @@
+//font variables
+$xxl-font: 4rem;
+$xl-font: 3rem;
+$lg-font: 2.25rem;
+$md-font: 1.5rem;
+$sm-font: 1rem;
+$xsm-font: 1.1rem;
+$xs-font: 0.88rem;
+$xxs-font: 0.81rem;
+$extra-font: 1.25rem;
+
+//color variables
+$primary-color: #ff7130;
+$secondary-color: #872b97;
+$warning-color: #e97316;
+$error-color: #ef444a;
+$success-color: #22c55e;
+$white-color: #ffffff;
+$black-color: #171721;
+$darker-color: #171718;
+$light: rgb(217, 217, 217);
+$light-100: #ECF0FD;
+$light-200: #DDD8FF;
+$light-300: #B3B3B4;
+$light-400: #8d8e8e;
+$light-500: #676868;
+$light-600: #414243;
+
+
+$fira-sans-font: "Fira Sans", sans-serif;
+$nunito-sans-font: "Nunito Sans", sans-serif;
+$raleway-font: "Raleway", sans-serif;
+
+//color maps
+$colors: (
+  "primary": $primary-color,
+  "secondary": $secondary-color,
+  "warning": $warning-color,
+  "error": $error-color,
+  "success": $success-color,
+  "white": $white-color,
+  "black": $black-color,
+);
+
+@each $key, $val in $colors {
+  .sb-text-#{$key} {
+    color: $val;
+  }
+
+  .sb-bg-#{$key} {
+    background-color: $val;
+  }
+
+  //all color variations
+  @for $i from 1 through 10 {
+    .sb-text-#{$key}-light-#{$i} {
+      color: mix(#ffffff, $val, $i * 10);
+    }
+    .sb-bg-#{$key}-light-#{$i} {
+      background-color: mix(#ffffff, $val, $i * 10);
+    }
+  }
+
+  @for $i from 1 through 10 {
+    .sb-text-#{$key}-dark-#{$i} {
+      color: mix(#000000, $val, $i * 10);
+    }
+    .sb-bg-#{$key}-dark-#{$i} {
+      background-color: mix(#000000, $val, $i * 10);
+    }
+  }
+}
