@@ -5,6 +5,7 @@ import * as yup from "yup";
 import Input from "../components/input/InputField";
 import Seo from "../components/seo/Seo";
 import { InputContents } from "../constants";
+import { PrimaryButton } from "../components/buttons";
 
 const schema = yup.object().shape({
   email: yup
@@ -31,7 +32,7 @@ export default function Login() {
       <div className="login__container">
         <div class="login--header">
           <div class="inner-header">
-            <div className="pt-24">
+            <div className="pt-24 px-4">
               <div className="bg-white max-w-lg mx-auto rounded-md px-6 py-8">
                 <Link href="/" className="flex flex-col items-center mb-10">
                   <div className="w-20 h-10 bg-secondary/70" />
@@ -50,6 +51,7 @@ export default function Login() {
                       </div>
                     )
                   )}
+                  <PrimaryButton text="Sign in" type="submit" />
                 </form>
               </div>
             </div>

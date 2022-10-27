@@ -3,15 +3,20 @@
     .login--header {
       position: relative;
       text-align: center;
+      overflow-y: hidden;
       background: linear-gradient(60deg, #872b97 0%, #ff7130 100%);
 
       .inner-header {
-        // height: 100%;
+        height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
 
-        h1{
+        @include sm {
+          // height: 85vh;
+        }
+
+        h1 {
           font-weight: 700;
           margin-bottom: 20px;
           font-size: $md-font;
@@ -19,10 +24,9 @@
         }
 
         > div {
-          >form {
-             margin-top: 30px;
+          > form {
+            margin-top: 30px;
           }
-         
         }
 
         &.inner-flex {
@@ -32,12 +36,11 @@
           text-align: center;
         }
       }
-
     }
   }
 }
 
-/*  Waves */ 
+/*  Waves */
 .waves {
   position: relative;
   width: 100%;
@@ -79,8 +82,8 @@
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height: 40px;
-    min-height: 40px;
+    height: 70px;
+    min-height: 70px;
   }
   h1 {
     font-size: 24px;
