@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Input from "../components/input/InputField";
+import { Input, PasswordInput } from "../components/input";
 import Seo from "../components/seo/Seo";
 import { InputContents } from "../constants";
 import { PrimaryButton } from "../components/buttons";
@@ -30,8 +30,8 @@ export default function Login() {
       />
 
       <div className="login__container">
-        <div class="login--header">
-          <div class="inner-header">
+        <div className="login--header">
+          <div className="inner-header">
             <div className="pt-24 px-4">
               <div className="bg-white max-w-lg mx-auto rounded-md px-6 py-8">
                 <Link href="/" className="flex flex-col items-center mb-10">
@@ -39,19 +39,23 @@ export default function Login() {
                 </Link>
                 <h1>Log in to Polygon</h1>
                 <form className="flex flex-col space-y-8">
-                  {InputContents.login_inputs.map(
-                    ({ label, name, placeholder, type }, idx) => (
-                      <div className="form--field" key={idx}>
-                        <Input
-                          label={label}
-                          type={type}
-                          name={name}
-                          placeholder={placeholder}
-                        />
-                      </div>
-                    )
-                  )}
-                  <PrimaryButton text="Sign in" type="submit" />
+                  <div className="form--field">
+                    <Input
+                      label="Email"
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div className="form--field">
+                    <PasswordInput
+                      label="Password"
+                      type="password"
+                      name="password"
+                      placeholder="Enter your password"
+                    />
+                  </div>
+                  <PrimaryButton text="Log in" type="submit" />
                 </form>
               </div>
             </div>
@@ -64,7 +68,7 @@ export default function Login() {
               xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 24 150 28"
               preserveAspectRatio="none"
-              shape-rendering="auto"
+              shapeRendering="auto"
             >
               <defs>
                 <path
@@ -72,7 +76,7 @@ export default function Login() {
                   d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
                 />
               </defs>
-              <g class="parallax">
+              <g className="parallax">
                 <use
                   xlinkHref="#gentle-wave"
                   x="48"
