@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         primary: "#ff7130",
         secondary: "#872b97",
+        accent: "#ff3c68",
         warning: "#e97316",
         error: "#ef444a",
         success: "#22c55e",
@@ -39,9 +40,9 @@ module.exports = {
         extra: "1.25rem",
       },
       fontFamily: {
-        fira: ["Fira Sans", "sans-serif"],
+        fira: ["Fira Mono", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
         nunito: ["Nunito Sans", "sans-serif"],
-        raleway: ["Raleway", "sans-serif"],
       },
       fontWeight: {
         "extra-light": 100,

@@ -1,5 +1,7 @@
 //font variables
 $xxl-font: 4rem;
+$xxl-1-font: 5rem;
+$xxl-2-font: 6rem;
 $xl-font: 3rem;
 $lg-font: 2.25rem;
 $md-font: 1.5rem;
@@ -12,6 +14,7 @@ $extra-font: 1.25rem;
 //color variables
 $primary-color: #ff7130;
 $secondary-color: #872b97;
+$accent-color: #ff3c68;
 $warning-color: #e97316;
 $error-color: #ef444a;
 $success-color: #22c55e;
@@ -27,9 +30,9 @@ $light-500: #676868;
 $light-600: #414243;
 
 
-$fira-sans-font: "Fira Sans", sans-serif;
-$nunito-sans-font: "Nunito Sans", sans-serif;
-$raleway-font: "Raleway", sans-serif;
+$fira-font: "Fira Mono", sans-serif;
+$nunito-font: "Nunito Sans", sans-serif;
+$roboto-font: "Roboto", sans-serif;
 
 //color maps
 $colors: (

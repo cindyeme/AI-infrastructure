@@ -5,7 +5,7 @@
 }
 @media (min-width: 1025px) {
   .topnavigation {
-    padding: 1rem 8rem;
+    padding: 1rem 6rem;
   }
 }
 
@@ -72,7 +72,7 @@
         &:hover {
           color: $primary-color;
           background-color: $white-color;
-          border: 1px solid $primary-color;
+          border: 1px solid $white-color;
         }
       }
     }

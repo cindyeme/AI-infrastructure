@@ -1,0 +1,45 @@
+a.btn, button.btn {
+  font-weight: 600;
+  font-size: $sm-font;
+  font-family: $roboto-font;
+  transition: all 0.3s ease;
+  border-radius: 0.2rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mxs {
+    width: 100% !important;
+  }
+}
+.btn--primary {
+  background-color: $primary-color;
+  color: $white-color;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    background-color: rgb(255 113 48 / 0.6);
+    color: $white-color !important;
+    border: 0px;
+  }
+}
+.btn--white {
+  background-color: $white-color;
+  color: $primary-color;
+
+  &:hover {
+    background-color: rgb(255 255 255 / 0.6);
+    color: $primary-color !important;
+  }
+}
+.btn--transparent {
+  background-color: transparent;
+  color: $white-color;
+  border: 1px solid $white-color;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white-color !important;
+    border-color: $primary-color;
+  }
+}
