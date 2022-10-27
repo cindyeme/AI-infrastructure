@@ -22,7 +22,7 @@ const navLinks = [
 const TopNavigation = () => {
   const router = useRouter();
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
   const showNav = () => {
     setIsOpen(!isOpen);
   };
@@ -34,12 +34,10 @@ const TopNavigation = () => {
         }`}
       >
         <div className="topnavigation__left">
-          <Link href="/">
-            <a>LOGO</a>
-          </Link>
+          <Link href="/">LOGO</Link>
           {navLinks.map((item, index) => (
-            <Link href={`${item.linkUrl}`} key={index}>
-              <a
+            <Link href={`${item.linkUrl}`} key={index} passHref>
+              <span
                 className={` hover:!text-lighter-gray xl:mx-4 ${
                   router.pathname === item.linkUrl
                     ? "!text-primary"
@@ -47,18 +45,20 @@ const TopNavigation = () => {
                 }`}
               >
                 {item.name}
-              </a>
+              </span>
             </Link>
           ))}
         </div>
         <div className="topnavigation__right">
-          <Link href="/login">
-            <a id="login" className="!text-white hover:!text-lighter-gray">
-              Login
-            </a>
+          <Link
+            href="/login"
+            id="login"
+            className="!text-white hover:!text-lighter-gray"
+          >
+            Login
           </Link>
-          <Link href="/register">
-            <a id="register">Create an account</a>
+          <Link href="/register" id="register">
+            Create an account
           </Link>
         </div>
         {/* Mobile navigation */}
@@ -89,9 +89,9 @@ const TopNavigation = () => {
         `}
       >
         {navLinks.map((item, index) => (
-          <div className="mobile__nav__links" key={index}>
+          <div className="mobile__nav__links" key={index} passHref>
             <Link href={`${item.linkUrl}`}>
-              <a
+              <span
                 onClick={() => setIsOpen(false)}
                 className={`mobile--links ${
                   router.pathname === item.linkUrl
@@ -100,15 +100,15 @@ const TopNavigation = () => {
                 }`}
               >
                 {item.name}
-              </a>
+              </span>
             </Link>
           </div>
         ))}
-        <Link href="/login">
-          <a id="login-mobile">Login</a>
+        <Link href="/login" id="login-mobile">
+          Login
         </Link>
-        <Link href="/register">
-          <a id="register-mobile">Create an account</a>
+        <Link href="/register" id="register-mobile">
+          Create an account
         </Link>
       </div>
     </header>
