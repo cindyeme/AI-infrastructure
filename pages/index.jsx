@@ -9,7 +9,7 @@ export default function Home() {
       />
 
       <div className="home__container">
-        Here section
+        {/* Here section */}
       </div>
     </div>
   );

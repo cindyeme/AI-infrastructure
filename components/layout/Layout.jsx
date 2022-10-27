@@ -3,7 +3,7 @@ import TopNavigation from "../ui/navigation/TopHeader";
 function Layout({children}) {
   return (
     <>
-      {/* <TopNavigation /> */}
+      <TopNavigation />
       <main>{ children}</main>
     </>
   )
