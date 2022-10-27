@@ -1,3 +1,7 @@
+.section--pad{
+  padding: 0 1.2rem;
+}
+
 .home {
   .home__container {
     width: 100%;
@@ -26,12 +30,23 @@
       margin-top: 10rem;
       padding-bottom: 4rem;
 
+      @include sm{
+        margin-top: 9rem;
+      }
+
       .hero--title {
         font-size: $xxl-1-font;
         font-weight: 700;
         color: $white-color;
         text-align: center;
         line-height: 1.2em;
+
+        @include sm{
+          font-size: $xl-font !important;
+        }
+        @include md{
+          font-size: $xxl-font;
+        }
       }
       .hero--paragraph {
         font-size: $extra-font;

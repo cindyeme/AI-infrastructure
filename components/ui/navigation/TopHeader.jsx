@@ -44,7 +44,7 @@ const TopNavigation = () => {
         <div className="topnavigation__left">
           <Link href="/">LOGO</Link>
           {navLinks.map((item, index) => (
-            <Link href={`${item.linkUrl}`} key={index} passHref>
+            <Link href={`${item.linkUrl}`} key={index}>
               <span
                 className={` hover:!text-primary xl:mx-1 ${
                   router.pathname === item.linkUrl
@@ -97,7 +97,7 @@ const TopNavigation = () => {
         `}
       >
         {navLinks.map((item, index) => (
-          <div className="mobile__nav__links" key={index} passHref>
+          <div className="mobile__nav__links" key={index}>
             <Link href={`${item.linkUrl}`}>
               <span
                 onClick={() => setIsOpen(false)}
