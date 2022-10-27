@@ -1,0 +1,56 @@
+.form--field {
+  .form--label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+      color: $black-color;
+      font-size: $sm-font;
+      padding-bottom: 10px;
+    }
+    .form--input {
+      border: 0.7px solid $light-300;
+      border-radius: 2px;
+      width: 100%;
+      background: transparent;
+      padding: 0 .7rem;
+
+      &.form--input_error{
+        border: 0.7px solid $error-color;
+      }
+      &:focus{
+        border-color: $primary-color;
+        background: $white-color;
+      }
+    }
+    input{
+      &:hover{
+        border: 1px solid $primary-color;
+      }
+      &:focus{
+        outline: none;
+        border: 1px solid $primary-color;
+      }
+    }
+    input, select{
+      height: 43px;
+    }
+    input, textarea{
+      color: $white-color;
+    }
+    select{
+      color: $light-300;
+    }
+    ::placeholder {
+      color: $light-300;
+    }
+    :-moz-placeholder {
+      color: $light-300;
+    }
+    .form--error{
+      color: $error-color;
+      font-size: $xxs-font;
+    }
+  }
+}
