@@ -6,16 +6,24 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const navLinks = [
   {
-    name: "Business",
-    linkUrl: "/business",
+    name: "Platform",
+    linkUrl: "/platform",
+  },
+  {
+    name: "Solutions",
+    linkUrl: "/solutions",
+  },
+  {
+    name: "Customers",
+    linkUrl: "/customers",
+  },
+  {
+    name: "Resources",
+    linkUrl: "/resources",
   },
   {
     name: "Company",
     linkUrl: "/company",
-  },
-  {
-    name: "Pricing",
-    linkUrl: "/pricing",
   },
 ];
 
@@ -38,7 +46,7 @@ const TopNavigation = () => {
           {navLinks.map((item, index) => (
             <Link href={`${item.linkUrl}`} key={index} passHref>
               <span
-                className={` hover:!text-lighter-gray xl:mx-4 ${
+                className={` hover:!text-primary xl:mx-1 ${
                   router.pathname === item.linkUrl
                     ? "!text-primary"
                     : "!text-white"
@@ -53,7 +61,7 @@ const TopNavigation = () => {
           <Link
             href="/login"
             id="login"
-            className="!text-white hover:!text-lighter-gray"
+            className="!text-white hover:!text-primary"
           >
             Login
           </Link>
