@@ -52,7 +52,7 @@ export default function Login() {
                 <Link href="/" className="flex flex-col items-center mb-8">
                   <div className="w-20 h-10 bg-secondary/70" />
                 </Link>
-                <h1>Log in to Polygon</h1>
+                <h1>Welcome Back!</h1>
                 <form
                   className="flex flex-col space-y-4"
                   onSubmit={formik.handleSubmit}
