@@ -13,3 +13,19 @@ h3 {
 p {
   font-size: $sm-font;
 }
+
+.section--title {
+  font-family: $fira-font;
+  font-weight: 700;
+  text-align: center;
+  color: $black-color;
+  @include sm{
+    font-size: $md-font;
+  }
+}
+
+.section--subtitle {
+  font-size: $xsm-font;
+  margin-top: 15px;
+  text-align: center;
+}

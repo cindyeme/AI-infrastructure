@@ -1,10 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 import { AiOutlineDeploymentUnit } from "react-icons/ai";
 import { MdModelTraining, MdOutlineDeveloperBoard } from "react-icons/md";
+
 import Layout from "../components/layout/Layout";
 import Seo from "../components/seo/Seo";
+import { SingleOffer } from "../components/ui/ourOffers";
+import { Offers } from "../constants";
 
 export default function Home() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleToggle = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
     <Layout>
       <Seo
@@ -66,8 +77,47 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-              
+        <div className="section--pad home__our--offers">
+          <div className="max-w-7xl mx-auto my-24">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="section--title">
+                Your Digital Transformation Starts Here
+              </h2>
+              <p className="section--subtitle">
+                Build, scale, and adapt quickly using our comprehensive products
+                and solutions.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-y-6 md:gap-x-6 xl:gap-x-16 mt-16">
+              <div className="offer__left--content col-span-1">
+                {Offers.map((offer, idx) => (
+                  <SingleOffer
+                    key={idx}
+                    title={offer.title}
+                    desc={offer.desc}
+                    icon={offer.icon}
+                    link={offer.link}
+                    href={offer.href}
+                    active={activeIndex}
+                    id={idx}
+                    handleToggle={handleToggle}
+                  />
+                ))}
+              </div>
+
+              <div className="col-span-1 mt-6 md:mt-0">
+                <Image
+                  src={Offers[activeIndex]?.image}
+                  alt=""
+                  width={533}
+                  height={523}
+                  priority={true}
+                />
+              </div>
             </div>
           </div>
         </div>

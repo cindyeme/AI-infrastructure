@@ -1,1 +1,1 @@
-export { default as InputContents } from './inputs';
+export { default as Offers } from './Offers';
