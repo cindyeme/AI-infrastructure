@@ -12,9 +12,7 @@ const PrimaryButton = ({ type, text }) => {
             font-size: 1.2rem;
           }
           .btn:hover {
-            background: white;
-            border: 1px solid #ff7130;
-            color: #ff7130 !important;
+            background: #f05b17;
           }
         `}
       </style>
