@@ -5,20 +5,28 @@ const Input = ({
   placeholder,
   children,
   error,
-  // onChange
-}) => (
-  <label className="form--label">
-    <span>{label}</span>
-    <input
-      type={type}
-      name={name}
-      id={name}
-      className={`form--input ${error && "form--input_error"}`}
-      placeholder={placeholder}
-      // onChange={onChange}
-    />
-    {children}
-  </label>
-);
+  onChange,
+  value,
+  loading,
+  ...rest
+}) => {
+  return (
+    <label className="form--label">
+      <span>{label}</span>
+      <input
+        type={type}
+        name={name}
+        id={name}
+        onChange={onChange}
+        value={value}
+        className={`form--input ${error && "form--input_error"}`}
+        placeholder={placeholder}
+        disabled={loading}
+        {...rest}
+      />
+      {children}
+    </label>
+  );
+};
 
 export default Input;

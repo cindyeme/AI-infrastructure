@@ -11,6 +11,9 @@ a.btn, button.btn {
   @include mxs {
     width: 100% !important;
   }
+  &:focus{
+    outline: 0;
+  }
 }
 .btn--primary {
   background-color: $primary-color;

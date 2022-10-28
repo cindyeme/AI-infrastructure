@@ -22,19 +22,6 @@
           font-size: $md-font;
           font-family: $nunito-font;
         }
-
-        > div {
-          > form {
-            margin-top: 30px;
-          }
-        }
-
-        &.inner-flex {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-        }
       }
     }
   }
