@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BsArrowRightShort } from "react-icons/bs";
 
 const SingleOffer = ({ title, desc, link, href, active, handleToggle, id }) => {
   return (
@@ -27,9 +28,9 @@ const SingleOffer = ({ title, desc, link, href, active, handleToggle, id }) => {
             </p>
             <Link
               href={`${href}`}
-              className="text-primary text-sm hover:tracking-wider transition-all duration-400 ease-out group-hover:tracking-wider"
+              className="text-primary text-sm hover:tracking-wider transition-all duration-400 ease-out group-hover:tracking-wider flex items-center space-x-2"
             >
-              {link}
+              <span>{link}</span> <BsArrowRightShort />
             </Link>
           </div>
         </div>
