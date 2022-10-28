@@ -59,13 +59,13 @@ const TopNavigation = () => {
         </div>
         <div className="topnavigation__right">
           <Link
-            href="auth/login"
+            href="/auth/login"
             id="login"
             className="!text-white hover:!text-primary"
           >
             Login
           </Link>
-          <Link href="auth/register" id="register">
+          <Link href="/auth/register" id="register">
             Create an account
           </Link>
         </div>
@@ -112,10 +112,10 @@ const TopNavigation = () => {
             </Link>
           </div>
         ))}
-        <Link href="auth/login" id="login-mobile">
+        <Link href="/auth/login" id="login-mobile">
           Login
         </Link>
-        <Link href="auth/register" id="register-mobile">
+        <Link href="/auth/register" id="register-mobile">
           Create an account
         </Link>
       </div>

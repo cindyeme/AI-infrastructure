@@ -6,6 +6,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Input, PasswordInput } from "../../components/input";
 import Seo from "../../components/seo/Seo";
 import { PrimaryButton } from "../../components/buttons";
+import { Waves } from "../../components/ui/animations";
 
 const RegisterSchema = Yup.object().shape({
   first_name: Yup.string().required("First name is required!"),
@@ -27,7 +28,7 @@ const RegisterSchema = Yup.object().shape({
     ),
 });
 
-export default function Login() {
+export default function Register() {
   const formik = useFormik({
     initialValues: {
       first_name: "",
@@ -46,14 +47,14 @@ export default function Login() {
   });
 
   return (
-    <div className="register">
+    <div className="auth">
       <Seo
         pageTitle="Polygon | Register"
         metaDescriptionContent="Polygon is a User-friendly Automated Machine Learning platform built for novice, researchers , data scientist and machine learning experts"
       />
 
-      <div className="register__container">
-        <div className="register--header">
+      <div className="auth__container">
+        <div className="auth--header">
           <div className="inner-header">
             <div className="pt-16 lg:pt-20 px-4">
               <div className="bg-white max-w-xl mx-auto rounded-md px-6 pt-6 pb-8">
@@ -237,7 +238,7 @@ export default function Login() {
 
                 <p className="text-sm text-center mt-5">
                   Already have an account?{" "}
-                  <Link href="auth/login" className="text-primary">
+                  <Link href="/auth/login" className="text-primary">
                     Log in
                   </Link>
                 </p>
@@ -245,44 +246,7 @@ export default function Login() {
             </div>
           </div>
 
-          <div>
-            <svg
-              className="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shapeRendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g className="parallax">
-                <use
-                  xlinkHref="#gentle-wave"
-                  x="48"
-                  y="0"
-                  fill="rgba(255,255,255,0.7"
-                />
-                <use
-                  xlinkHref="#gentle-wave"
-                  x="48"
-                  y="3"
-                  fill="rgba(255,255,255,0.5)"
-                />
-                <use
-                  xlinkHref="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="rgba(255,255,255,0.3)"
-                />
-                <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
-              </g>
-            </svg>
-          </div>
+          <Waves />
         </div>
       </div>
     </div>

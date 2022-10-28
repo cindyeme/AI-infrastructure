@@ -3,30 +3,23 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import { Input, PasswordInput } from "../../components/input";
+import { Input } from "../../components/input";
 import Seo from "../../components/seo/Seo";
 import { PrimaryButton } from "../../components/buttons";
 import { Waves } from "../../components/ui/animations";
 
-const LoginSchema = Yup.object().shape({
+const Schema = Yup.object().shape({
   email: Yup.string()
     .email("Please enter a valid email address")
     .required("Please enter your email"),
-  password: Yup.string()
-    .required("Please enter password!")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@(){}[\\//\?<>\]#$%^&*])(?=.{8,})/,
-      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    ),
 });
 
-export default function Login() {
+export default function VerifyEmail() {
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
     },
-    validationSchema: LoginSchema,
+    validationSchema: Schema,
     onSubmit: (values) => {
       console.log(values);
     },
@@ -35,7 +28,7 @@ export default function Login() {
   return (
     <div className="auth">
       <Seo
-        pageTitle="Polygon | Log in"
+        pageTitle="Polygon | Verify email"
         metaDescriptionContent="Polygon is a User-friendly Automated Machine Learning platform built for novice, researchers , data scientist and machine learning experts"
       />
 
@@ -52,9 +45,9 @@ export default function Login() {
                 <Link href="/" className="flex flex-col items-center mb-8">
                   <div className="w-20 h-10 bg-secondary/70" />
                 </Link>
-                <h1>Log in to Polygon</h1>
+                <h1>Reset Password</h1>
                 <form
-                  className="flex flex-col space-y-4"
+                  className="flex flex-col space-y-6"
                   onSubmit={formik.handleSubmit}
                   autoComplete="off"
                 >
@@ -76,26 +69,7 @@ export default function Login() {
                       )}
                     </Input>
                   </div>
-                  <div className="form--field">
-                    <PasswordInput
-                      label="Password"
-                      type="password"
-                      placeholder="Enter your password"
-                      onChange={formik.handleChange}
-                      value={formik.values.password}
-                      error={formik.errors.password}
-                      onBlur={formik.handleBlur}
-                      {...formik.getFieldProps("password")}
-                    >
-                      {formik.errors.password && formik.touched.password && (
-                        <span className="form--error">
-                          {formik.errors.password}
-                        </span>
-                      )}
-                    </PasswordInput>
-                  </div>
-                  <Link href="/auth/verify-email" className="text-right text-xs">Forgot password?</Link>
-                  <PrimaryButton text="Log in" type="submit" />
+                  <PrimaryButton text="Reset password" type="submit" />
                 </form>
 
                 <p className="text-sm text-center mt-5">
