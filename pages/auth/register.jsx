@@ -3,9 +3,9 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import { Input, PasswordInput } from "../components/input";
-import Seo from "../components/seo/Seo";
-import { PrimaryButton } from "../components/buttons";
+import { Input, PasswordInput } from "../../components/input";
+import Seo from "../../components/seo/Seo";
+import { PrimaryButton } from "../../components/buttons";
 
 const RegisterSchema = Yup.object().shape({
   first_name: Yup.string().required("First name is required!"),
@@ -237,7 +237,7 @@ export default function Login() {
 
                 <p className="text-sm text-center mt-5">
                   Already have an account?{" "}
-                  <Link href="login" className="text-primary">
+                  <Link href="auth/login" className="text-primary">
                     Log in
                   </Link>
                 </p>

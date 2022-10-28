@@ -3,9 +3,9 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import { Input, PasswordInput } from "../components/input";
-import Seo from "../components/seo/Seo";
-import { PrimaryButton } from "../components/buttons";
+import { Input, PasswordInput } from "../../components/input";
+import Seo from "../../components/seo/Seo";
+import { PrimaryButton } from "../../components/buttons";
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -99,7 +99,7 @@ export default function Login() {
 
                 <p className="text-sm text-center mt-5">
                   Don&apos;t have an account?{" "}
-                  <Link href="register" className="text-primary">
+                  <Link href="auth/register" className="text-primary">
                     Sign up
                   </Link>
                 </p>
